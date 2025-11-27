@@ -1,11 +1,17 @@
 .media-gallery {
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .media-gallery .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
+}
+
+.media-gallery .grid .media-item {
+    width: 200px;
+    flex-shrink: 0;
 }
 
 .media-item {
