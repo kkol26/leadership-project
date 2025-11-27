@@ -1,0 +1,52 @@
+.donate-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.donation-box {
+    background-color: var(--color-accent);
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    margin-top: 2rem;
+}
+
+.donation-title {
+    color: var(--color-primary-dark);
+}
+
+.donation-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.impact-section {
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.slideshow-section {
+    margin-top: 4rem;
+    text-align: left;
+}
+
+.slideshow-title {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .donation-box {
+        padding: 1.5rem;
+    }
+
+    .donation-number {
+        font-size: 1.25rem;
+    }
+
+    .slideshow-section {
+        margin-top: 2rem;
+    }
+}

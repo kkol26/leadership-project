@@ -1,48 +1,71 @@
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Heart } from 'lucide-react';
+import { Heart, Menu, X } from 'lucide-react';
+import './Navbar.css';
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
 
-  const linkStyle = (path) => ({
-    color: isActive(path) ? 'var(--color-primary)' : 'var(--color-text)',
-    fontWeight: isActive(path) ? 'bold' : 'normal',
-    borderBottom: isActive(path) ? '2px solid var(--color-primary)' : 'none',
-    paddingBottom: '0.25rem'
-  });
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
-    <nav style={{
-      backgroundColor: 'var(--color-white)',
-      boxShadow: 'var(--shadow-sm)',
-      padding: '1rem 0',
-      position: 'sticky',
-      top: 0,
-      zIndex: 1000
-    }}>
-      <div className="container" style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}>
-        <Link to="/" style={{
-          fontSize: '1.5rem',
-          fontWeight: 'bold',
-          color: 'var(--color-primary)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem'
-        }}>
+    <nav className="navbar">
+      <div className="container navbar-container">
+        <Link to="/" className="navbar-logo" onClick={closeMenu}>
           <Heart fill="var(--color-primary)" size={24} />
           <span>Leadership Project</span>
         </Link>
 
-        <ul style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          <li><Link to="/" style={linkStyle('/')}>Home</Link></li>
-          <li><Link to="/background" style={linkStyle('/background')}>The Issue</Link></li>
-          <li><Link to="/tutorials" style={linkStyle('/tutorials')}>DIY Toys</Link></li>
-          <li><Link to="/donate" className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>Donate</Link></li>
+        <button className="navbar-toggle" onClick={toggleMenu} aria-label="Toggle navigation">
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        <ul className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
+          <li>
+            <Link
+              to="/"
+              className={`navbar-link ${isActive('/') ? 'active' : ''}`}
+              onClick={closeMenu}
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/background"
+              className={`navbar-link ${isActive('/background') ? 'active' : ''}`}
+              onClick={closeMenu}
+            >
+              The Issue
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/tutorials"
+              className={`navbar-link ${isActive('/tutorials') ? 'active' : ''}`}
+              onClick={closeMenu}
+            >
+              DIY Toys
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/donate"
+              className="btn btn-primary"
+              style={{ padding: '0.5rem 1rem' }}
+              onClick={closeMenu}
+            >
+              Donate
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

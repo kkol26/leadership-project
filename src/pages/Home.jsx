@@ -1,6 +1,7 @@
 import React from 'react';
 import MediaGallery from '../components/MediaGallery';
 import '../components/MediaGallery.css';
+import './Home.css';
 import heroImg from '../assets/images/IMG-20251126-WA0000.jpg'; // Using first image as hero/intro image
 
 // Vite way to import multiple images
@@ -13,37 +14,23 @@ const images = Object.keys(imageModules).map((key) => ({
 const Home = () => {
     return (
         <div>
-            <section style={{
-                backgroundColor: 'var(--color-accent)',
-                padding: '4rem 0',
-                textAlign: 'center'
-            }}>
+            <section className="hero-section">
                 <div className="container">
-                    <h1 style={{ marginBottom: '1rem' }}>Empowering Special Needs Education</h1>
-                    <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
+                    <h1 className="hero-title">Empowering Special Needs Education</h1>
+                    <p className="hero-text">
                         Creative solutions for inclusive classrooms in Ghana.
                     </p>
                 </div>
             </section>
 
             <section className="container py-xl">
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr',
-                    gap: '4rem',
-                    alignItems: 'center'
-                }}>
+                <div className="about-grid">
                     <div>
-                        <div style={{
-                            height: '300px',
-                            borderRadius: 'var(--radius-lg)',
-                            overflow: 'hidden',
-                            boxShadow: 'var(--shadow-md)'
-                        }}>
+                        <div className="about-image-container">
                             <img
                                 src={heroImg}
                                 alt="Team at school"
-                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                className="about-image"
                             />
                         </div>
                     </div>
@@ -63,7 +50,7 @@ const Home = () => {
             </section>
 
             <section className="container py-xl">
-                <h2 style={{ marginBottom: "1rem", textAlign: 'center' }}>Our Journey in Pictures</h2>
+                <h2 className="section-title">Our Journey in Pictures</h2>
                 <MediaGallery images={images} />
             </section>
         </div>

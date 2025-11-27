@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoSlideshow from '../components/VideoSlideshow';
 import '../components/VideoSlideshow.css';
+import './Donate.css';
 
 // Vite way to import multiple videos
 const videoModules = import.meta.glob('../assets/videos/*.{mp4,webm}', { eager: true });
@@ -12,17 +13,12 @@ const videos = Object.keys(videoModules).map((key) => ({
 const Donate = () => {
     return (
         <div className="container py-xl">
-            <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+            <div className="donate-container">
                 <h1>Support Our Cause</h1>
 
-                <div style={{
-                    backgroundColor: 'var(--color-accent)',
-                    padding: '3rem',
-                    borderRadius: 'var(--radius-lg)',
-                    marginTop: '2rem'
-                }}>
-                    <h2 style={{ color: 'var(--color-primary-dark)' }}>Donation Hotline</h2>
-                    <p style={{ fontSize: '1.5rem', fontWeight: 'bold', margin: '1rem 0' }}>
+                <div className="donation-box">
+                    <h2 className="donation-title">Donation Hotline</h2>
+                    <p className="donation-number">
                         0507614631
                     </p>
                     <p>
@@ -30,7 +26,7 @@ const Donate = () => {
                     </p>
                 </div>
 
-                <div style={{ marginTop: '3rem', textAlign: 'left' }}>
+                <div className="impact-section">
                     <p className="mb-lg">
                         Even small contributions go a long way in helping us provide simple learning aids, advocate for improved conditions, and bring joy and stimulation into classrooms that often lack the basics.
                     </p>
@@ -39,8 +35,8 @@ const Donate = () => {
                     </p>
                 </div>
 
-                <div style={{ marginTop: '4rem', textAlign: 'left' }}>
-                    <h2 style={{ marginBottom: '1rem', textAlign: 'center' }}>See the Impact</h2>
+                <div className="slideshow-section">
+                    <h2 className="slideshow-title">See the Impact</h2>
                     <VideoSlideshow videos={videos} />
                 </div>
             </div>
