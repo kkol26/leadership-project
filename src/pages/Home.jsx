@@ -1,3 +1,15 @@
+import React from 'react';
+import MediaGallery from '../components/MediaGallery';
+import '../components/MediaGallery.css';
+import heroImg from '../assets/images/IMG-20251126-WA0000.jpg'; // Using first image as hero/intro image
+
+// Vite way to import multiple images
+const imageModules = import.meta.glob('../assets/images/*.{png,jpg,jpeg,webp,svg}', { eager: true });
+const images = Object.keys(imageModules).map((key) => ({
+    src: imageModules[key].default,
+    alt: key.split('/').pop().replace(/\.[^.]+$/, "").replace(/[-_]/g, " ")
+})).slice(0, 10);
+
 const Home = () => {
     return (
         <div>
@@ -23,15 +35,16 @@ const Home = () => {
                 }}>
                     <div>
                         <div style={{
-                            backgroundColor: '#ddd',
                             height: '300px',
                             borderRadius: 'var(--radius-lg)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: '#666'
+                            overflow: 'hidden',
+                            boxShadow: 'var(--shadow-md)'
                         }}>
-                            [Picture of us at the school]
+                            <img
+                                src={heroImg}
+                                alt="Team at school"
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            />
                         </div>
                     </div>
                     <div>
@@ -47,6 +60,11 @@ const Home = () => {
                         </p>
                     </div>
                 </div>
+            </section>
+
+            <section className="container py-xl">
+                <h2 style={{ marginBottom: "1rem", textAlign: 'center' }}>Our Journey in Pictures</h2>
+                <MediaGallery images={images} />
             </section>
         </div>
     );

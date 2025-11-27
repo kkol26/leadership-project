@@ -1,3 +1,14 @@
+import React from 'react';
+import VideoSlideshow from '../components/VideoSlideshow';
+import '../components/VideoSlideshow.css';
+
+// Vite way to import multiple videos
+const videoModules = import.meta.glob('../assets/videos/*.{mp4,webm}', { eager: true });
+const videos = Object.keys(videoModules).map((key) => ({
+    src: videoModules[key].default,
+    title: key.split('/').pop()
+}));
+
 const Donate = () => {
     return (
         <div className="container py-xl">
@@ -12,7 +23,7 @@ const Donate = () => {
                 }}>
                     <h2 style={{ color: 'var(--color-primary-dark)' }}>Donation Hotline</h2>
                     <p style={{ fontSize: '1.5rem', fontWeight: 'bold', margin: '1rem 0' }}>
-                        [Insert Phone Number / Mobile Money]
+                        0507614631
                     </p>
                     <p>
                         Your support helps create better learning conditions for children with special needs—children who deserve far more than the limited facilities many of their schools currently have.
@@ -26,6 +37,11 @@ const Donate = () => {
                     <p>
                         By donating materials or funds, you become part of a collective effort to make these learning environments more supportive, dignified, and accessible. Every little bit helps us move closer to giving these children the better facilities and opportunities they deserve.
                     </p>
+                </div>
+
+                <div style={{ marginTop: '4rem', textAlign: 'left' }}>
+                    <h2 style={{ marginBottom: '1rem', textAlign: 'center' }}>See the Impact</h2>
+                    <VideoSlideshow videos={videos} />
                 </div>
             </div>
         </div>

@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Background = () => {
     return (
         <div className="container py-xl">
