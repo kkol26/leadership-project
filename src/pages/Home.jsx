@@ -2,7 +2,7 @@ import React from 'react';
 import MediaGallery from '../components/MediaGallery';
 import '../components/MediaGallery.css';
 import './Home.css';
-import heroImg from '../assets/images/IMG-20251126-WA0000.jpg';
+import heroImg from '../assets/images/IMG-20251126-WA0014.jpg';
 
 // Top Row Images
 import img49 from '../assets/images/IMG-20251126-WA0049.jpg';
@@ -11,14 +11,14 @@ import img16 from '../assets/images/IMG-20251126-WA0016.jpg';
 import img12 from '../assets/images/IMG-20251126-WA0012.jpg';
 
 // Bottom Rows Images
-import img00 from '../assets/images/IMG-20251126-WA0000.jpg';
+import img00 from '../assets/images/IMG-20251126-WA0041.jpg';
 import img01 from '../assets/images/IMG-20251126-WA0001.jpg';
 import img02 from '../assets/images/IMG-20251126-WA0002.jpg';
-import img03 from '../assets/images/IMG-20251126-WA0003.jpg';
-import img04 from '../assets/images/IMG-20251126-WA0004.jpg';
-import img05 from '../assets/images/IMG-20251126-WA0005.jpg';
-import img06 from '../assets/images/IMG-20251126-WA0006.jpg';
-import img07 from '../assets/images/IMG-20251126-WA0007.jpg';
+import img03 from '../assets/images/IMG-20251126-WA0051.jpg';
+import img04 from '../assets/images/IMG-20251126-WA0011.jpg';
+import img05 from '../assets/images/IMG-20251126-WA0060.jpg';
+import img06 from '../assets/images/IMG-20251126-WA0024.jpg';
+import img07 from '../assets/images/IMG-20251126-WA0020.jpg';
 import img48 from '../assets/images/IMG-20251126-WA0048.jpg';
 import img36 from '../assets/images/IMG-20251126-WA0036.jpg';
 
