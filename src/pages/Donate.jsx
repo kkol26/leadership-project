@@ -17,9 +17,9 @@ const Donate = () => {
                 <h1>Support Our Cause</h1>
 
                 <div className="donation-box">
-                    <h2 className="donation-title">Donation Hotline</h2>
+                    <h2 className="donation-title">Sending Mobile Money</h2>
                     <p className="donation-number">
-                        0507614631
+                        Kwasi Appiah - 0507614631
                     </p>
                     <p>
                         Your support helps create better learning conditions for children with special needs—children who deserve far more than the limited facilities many of their schools currently have.
