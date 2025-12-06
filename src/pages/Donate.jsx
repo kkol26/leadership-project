@@ -2,6 +2,7 @@ import React from 'react';
 import VideoSlideshow from '../components/VideoSlideshow';
 import '../components/VideoSlideshow.css';
 import './Donate.css';
+import paystackLogo from '../assets/images/paystack-logo.png';
 
 // Vite way to import multiple videos
 const videoModules = import.meta.glob('../assets/videos/*.{mp4,webm}', { eager: true });
@@ -17,10 +18,26 @@ const Donate = () => {
                 <h1>Support Our Cause</h1>
 
                 <div className="donation-box">
-                    <h2 className="donation-title">Sending Mobile Money</h2>
+                    <h2 className="donation-title">Donate to HopeSetters Autism Center</h2>
+                    <a
+                        href="https://paystack.shop/pay/5boy8-hv2n"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="paystack-button"
+                    >
+                        <img src={paystackLogo} alt="Paystack" className="paystack-logo" />
+                        <span>Donate with Paystack</span>
+                    </a>
+                </div>
+
+                <div className="donation-box">
+                    <h2 className="donation-title">Donate to Dzorwulu Special School</h2>
                     <p className="donation-number">
-                        Kwasi Appiah - 0507614631
+                        Call 0277418965
                     </p>
+                </div>
+
+                <div className="donation-box">
                     <p>
                         Your support helps create better learning conditions for children with special needs—children who deserve far more than the limited facilities many of their schools currently have.
                     </p>
